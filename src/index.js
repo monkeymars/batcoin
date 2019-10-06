@@ -13,7 +13,7 @@ const routing = (
       <Navbar />
       <Switch>
         <Route exact path="/" component={Login} />
-        <Route exact path="/exchange" component={Exchange} />
+        <Route path="/exchange" component={Exchange} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/login" component={Login} />
         <Route component={Notfound} />
