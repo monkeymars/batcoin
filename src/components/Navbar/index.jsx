@@ -1,19 +1,32 @@
 import React from 'react'
+import { PageHeader } from 'antd'
 import { Link } from 'react-router-dom'
+import './styles.css'
 
 const NavbarComponent = () => {
   return (
     <>
-      <h1>Navbar</h1>
-      <ul>
-        <li>
-          <Link to="/login">login</Link>
-        </li>
-        <li>
-          <Link to="/dashboard">Dashboard</Link>
-        </li>
-      </ul>
-      <hr />
+      <PageHeader
+        className="navbar-header"
+        subTitle="Cryptocurrency Exchange Service"
+        tags={
+          <div className="navbar-menu">
+            <Link to="/exchange">
+              <strong>Exchange</strong>
+            </Link>
+          </div>
+        }
+        title="Batcoin"
+        extra={
+          [
+            // <Button key="3">Operation</Button>,
+            // <Button key="2">Operation</Button>,
+            // <Button key="1" type="primary">
+            //   Primary
+            // </Button>
+          ]
+        }
+      />
     </>
   )
 }
