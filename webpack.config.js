@@ -2,7 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const htmlPlugin = new HtmlWebpackPlugin({
-  template: './public/index.html',
+  template: path.resolve(__dirname, './public', 'index.html'),
   filename: './index.html'
 })
 
@@ -16,7 +16,32 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[name]_[local]_[hash:base64]',
+              sourceMap: true,
+              minimize: true
+            }
+          }
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          {
+            loader: 'less-loader',
+            options: { javascriptEnabled: true }
+          }
+        ]
       }
     ]
   },
@@ -24,10 +49,16 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
-  entry: path.join(__dirname, './src/index.js'),
+  entry: {
+    index: './src/index.js'
+  },
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
-    filename: 'bundle.js'
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
   }
 }
