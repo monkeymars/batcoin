@@ -1,5 +1,5 @@
 import React from 'react'
-import { PageHeader } from 'antd'
+import { PageHeader, Button } from 'antd'
 import { Link } from 'react-router-dom'
 import './styles.css'
 
@@ -11,21 +11,13 @@ const NavbarComponent = () => {
         subTitle="Cryptocurrency Exchange Service"
         tags={
           <div className="navbar-menu">
-            <Link to="/exchange">
+            <Link to="/exchange/IDR:BTC">
               <strong>Exchange</strong>
             </Link>
           </div>
         }
         title="Batcoin"
-        extra={
-          [
-            // <Button key="3">Operation</Button>,
-            // <Button key="2">Operation</Button>,
-            // <Button key="1" type="primary">
-            //   Primary
-            // </Button>
-          ]
-        }
+        extra={[<Button key="3">Logout</Button>]}
       />
     </>
   )
