@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import Login from './pages/Login'
 import Exchange from './pages/Exchange'
-import Dashboard from './pages/Dashboard'
 import Notfound from './pages/404'
 import Navbar from './components/Navbar'
 
@@ -14,7 +13,6 @@ const routing = (
       <Switch>
         <Route exact path="/" component={Login} />
         <Route path="/exchange" component={Exchange} />
-        <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/login" component={Login} />
         <Route component={Notfound} />
       </Switch>
