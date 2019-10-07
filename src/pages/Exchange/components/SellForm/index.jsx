@@ -14,6 +14,8 @@ const SellFormComponent = ({ priceSell }) => {
   const fee = total - total * (0.15 / 100)
   const netAmount = total - (total - total * (0.15 / 100))
 
+  // set default prive value
+  // when component mounted with useEffect hooks
   useEffect(() => {
     setPriceValue(priceSell)
   }, [priceSell])

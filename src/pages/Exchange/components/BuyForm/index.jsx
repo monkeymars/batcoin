@@ -14,6 +14,8 @@ const BuyFormComponent = ({ priceBuy }) => {
   const fee = estimatedAmount * (0.15 / 100)
   const netAmount = estimatedAmount - fee
 
+  // set default prive value
+  // when component mounted with useEffect hooks
   useEffect(() => {
     setPriceValue(priceBuy)
   }, [priceBuy])

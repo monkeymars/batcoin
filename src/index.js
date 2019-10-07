@@ -13,6 +13,10 @@ import Exchange from './pages/Exchange'
 import Notfound from './pages/404'
 import Navbar from './components/Navbar'
 
+/**
+ * Private route component
+ * return exchange component or redirect to login
+ */
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}

@@ -31,6 +31,8 @@ const LoginPage = ({ history }) => {
           })}
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
+              // Set cookie authenticated true (simulated)
+              // & expired in one 1
               cookie.set('authenticated', true, { expires: 1 })
               history.push('/exchange/IDR:BTC')
               setSubmitting(false)
