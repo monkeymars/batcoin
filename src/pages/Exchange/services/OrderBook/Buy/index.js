@@ -1,40 +1,4 @@
-import React from 'react'
-import formatCurrency from 'format-currency'
-
-const opts = { format: '%v' }
-
-export const columnsBuy = [
-  {
-    title: 'Total (IDR)',
-    dataIndex: 'total'
-  },
-  {
-    title: 'Amount',
-    dataIndex: 'amount'
-  },
-  {
-    title: 'Price (IDR)',
-    dataIndex: 'price',
-    render: price => (
-      <span>
-        <a
-          href="#"
-          onClick={e => {
-            e.stopPropagation()
-            // eslint-disable-next-line no-console
-            console.log(price)
-          }}
-        >
-          <b style={{ color: 'rgb(255, 88, 88)' }}>
-            {formatCurrency(price, opts)}
-          </b>
-        </a>
-      </span>
-    )
-  }
-]
-
-export const dataBuy = [
+const dataBuy = [
   {
     key: '1',
     total: 34312924,
@@ -72,3 +36,5 @@ export const dataBuy = [
     price: 120999000
   }
 ]
+
+export default dataBuy
