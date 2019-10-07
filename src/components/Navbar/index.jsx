@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import { PageHeader, Button } from 'antd'
-import { Link } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
+import cookie from 'js-cookie'
 import './styles.css'
 
-const NavbarComponent = () => {
+const NavbarComponent = ({ history }) => {
   return (
     <>
       <PageHeader
@@ -17,10 +19,21 @@ const NavbarComponent = () => {
           </div>
         }
         title="Batcoin"
-        extra={[<Button key="3">Logout</Button>]}
+        extra={
+          cookie.get('authenticated') && (
+            <Button
+              onClick={() => {
+                cookie.remove('authenticated')
+                history.push('/login')
+              }}
+            >
+              Logout
+            </Button>
+          )
+        }
       />
     </>
   )
 }
 
-export default NavbarComponent
+export default withRouter(NavbarComponent)
