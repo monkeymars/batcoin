@@ -1,0 +1,40 @@
+.ant-table-thead>tr>th,
+.ant-table-tbody>tr>td {
+  padding: 16px 16px;
+  text-align: right;
+}
+
+.ant-collapse-content>.ant-collapse-content-box {
+  padding: 0;
+}
+
+.buyBox {
+  padding: 20px
+}
+
+.buyBox input {
+  height: 40px;
+}
+
+.buyBox button {
+  height: 40px;
+}
+
+.buyBox .text-label {
+  font-size: 12px;
+}
+
+.detail-info {
+  margin-top: -20px;
+}
+
+.text-bold {
+  font-weight: bold
+}
+
+.desc-group {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin-bottom: -12px;
+}
