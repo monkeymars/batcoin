@@ -1,10 +1,14 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable func-names */
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import { Form, Icon, Input, Button, Checkbox, Row, Col, Alert } from 'antd'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 import './style.css'
+import cookie from 'js-cookie'
 
-const LoginPage = () => {
+const LoginPage = ({ history }) => {
   return (
     <Row type="flex" justify="center">
       <Col span={8} className="login-form">
@@ -19,20 +23,16 @@ const LoginPage = () => {
               .test(
                 'checkPassword',
                 'should not contain the word "password"',
-                // eslint-disable-next-line func-names
                 function(fieldValue) {
-                  return (
-                    !fieldValue.includes('password') &&
-                    !fieldValue.includes('p455w0rd')
-                  )
+                  return !fieldValue.includes('password')
                 }
               )
               .required('Password is needed!')
           })}
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
-              // eslint-disable-next-line no-console
-              console.log(JSON.stringify(values, null, 2))
+              cookie.set('authenticated', true, { expires: 1 })
+              history.push('/exchange/IDR:BTC')
               setSubmitting(false)
             }, 400)
           }}
@@ -107,4 +107,4 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage
+export default withRouter(LoginPage)
