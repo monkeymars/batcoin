@@ -24,7 +24,7 @@
     │   └── ...
     └── ...
 
-This project was bootstrapped with **React, Babel, Webpack, esLint & AntD as UI Framework**.
+This project was bootstrapped with **React, Babel, Webpack, ESLint & AntD as UI Framework**.
 
 I try implementing react hooks api and using functional component instead of class component for clearer syntax, less line code, smaller file zise afer bundling also it is easier to share stateful logic between component.
 
