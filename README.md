@@ -15,7 +15,7 @@
     │   ├── pages                 # this directory is used to differentiate code based on page url
     │   │   └── Login             # login page for set authentication before enter exhange page
     │   │   └── 404               # page not found: 404
-    │   │   └── Exchange          # page not found: 404
+    │   │   └── Exchange          # exchange page: show order book and order form
     │   │       ├── components    # component that used only by specific page (Exchange Component)
     │   │       ├── services      # service for list order book (Sell & Buy)
     │   │       ├── styles        # this styles directory is used only for specific page
