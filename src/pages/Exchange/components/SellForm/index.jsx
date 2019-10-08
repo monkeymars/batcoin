@@ -11,8 +11,8 @@ const SellFormComponent = ({ priceSell }) => {
   const [priceValue, setPriceValue] = useState(0)
   const [totalValue, setTotalValue] = useState(0)
   const total = totalValue * priceValue
-  const fee = total - total * (0.15 / 100)
-  const netAmount = total - (total - total * (0.15 / 100))
+  const fee = total * (0.15 / 100)
+  const netAmount = totalValue * priceValue - fee
 
   // set default prive value
   // when component mounted with useEffect hooks
@@ -62,7 +62,7 @@ const SellFormComponent = ({ priceSell }) => {
                   Fee (Maker 0.15% - Taker 0.15%) <Icon type="info-circle" />
                 </span>
                 <span className="btc-amount">
-                  {formatCurrency(total - fee, optsIDR)}
+                  {formatCurrency(fee, optsIDR)}
                 </span>
               </section>
               <section className="desc-group">
