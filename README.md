@@ -1,4 +1,4 @@
-# Preview
+# App Preview
 
 ![alt text](https://i.imgur.com/ufDZcwJ.png)
 ![alt text](https://i.imgur.com/2RBkcCL.png)
@@ -24,7 +24,8 @@
     │   └── ...
     └── ...
 
-This project was bootstrapped with React, Babel, Webpack, esLint & AntD as UI Framework.
+This project was bootstrapped with **React, Babel, Webpack, esLint & AntD as UI Framework**.
+
 I try implementing react hooks api and using functional component instead of class component for clearer syntax, less line code, smaller file zise afer bundling also it is easier to share stateful logic between component.
 
 As you can see at ./src, there is components directory so all global components goes here (eg: NavbarComponent). Then ./src/pages will store codes based on page url (eg: /login, /404, /exchange). Inside page component directory, there are components, services, styles, index that specificaly used by its page.
